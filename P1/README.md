@@ -10,10 +10,10 @@ The infrastructure must follow security best practices to ensure a secure deploy
 
 #### Technology Stack
 To meet these requirements, we will use:
-✅ Packer → To create a custom server image for consistent VM deployments.
-✅ Terraform → To define an automated, scalable, and repeatable infrastructure deployment.
-✅ Azure Load Balancer → To manage and distribute incoming traffic across multiple VMs.
-✅ Azure Policy → To enforce governance and security standards.
+- ✅ Packer → To create a custom server image for consistent VM deployments.
+- ✅ Terraform → To define an automated, scalable, and repeatable infrastructure deployment.
+- ✅ Azure Load Balancer → To manage and distribute incoming traffic across multiple VMs.
+- ✅ Azure Policy → To enforce governance and security standards.
 
 This approach will allow the infrastructure to be easily managed, cost-effective, and ready for future scalability as the application grows. 🚀
 
