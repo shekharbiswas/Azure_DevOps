@@ -34,6 +34,17 @@ You can use your personal Azure account as well to complete this exercise. Every
 ![image](https://github.com/user-attachments/assets/c4a0119f-fd22-4dd0-a1c0-efd32c41316b)
 
 
+### Setting Up Azure Environment Variables
+
+Before running the Packer build or any Azure-related tasks, make sure to set the following environment variables.
+
+In your terminal, run:
+
+```bash
+export ARM_CLIENT_ID='eb30a82f-2d52-4de0-84c2-5ecb67632510'
+export ARM_CLIENT_SECRET='1606963f-a706-4bc3-bc15-6dbdb78ce4d1'
+export ARM_SUBSCRIPTION_ID='0fc88ba0-a7fc-4f7c-bd55-59425648f69b'
+```
 
 ### Create Server Image: Packer Template
 
