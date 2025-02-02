@@ -28,7 +28,7 @@ Archive:  packer_1.8.6_linux_amd64.zip
 shekhar [ ~ ]$ mkdir -p ~/bin
 shekhar [ ~ ]$ mv packer ~/bin/
 shekhar [ ~ ]$ echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
-source ~/.bashrc
+shekhar [ ~ ]$ source ~/.bashrc
 shekhar [ ~ ]$ packer --version
 1.8.6
 
