@@ -28,3 +28,4 @@ shekhar [ ~ ]$ mv packer ~/bin/
 shekhar [ ~ ]$ echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
 source ~/.bashrc
 shekhar [ ~ ]$ packer --version
+1.8.6
