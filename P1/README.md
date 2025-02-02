@@ -33,6 +33,7 @@ You can use your personal Azure account as well to complete this exercise. Every
 
 ![image](https://github.com/user-attachments/assets/c4a0119f-fd22-4dd0-a1c0-efd32c41316b)
 
+(You can do also by Azure CLI- Important is **assigning Contributor Role**)
 
 ### Setting Up Azure Environment Variables
 
