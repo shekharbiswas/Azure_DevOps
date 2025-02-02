@@ -27,7 +27,12 @@ To complete this project, you will need:
 
 ### Instructions
 
-- Configure Azure Credentials
+#### Create Server Image: Packer Template
 
-### Output
+First, use Packer to create a server image, ensuring the provided application is included in the template. 
+
+Define the necessary variables and configure the provisioning steps to install the application within the image. 
+Be sure to set up any required configuration files, environment variables, and dependencies during the provisioning process.
+
+Once the template is ready, run Packer to build the image. Validate the image to ensure everything is correctly configured. After that, use the newly created image to deploy servers with the application pre-installed, ensuring consistency across environments.
 
