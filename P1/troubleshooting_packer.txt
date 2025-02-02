@@ -1,3 +1,7 @@
+Installing Packer
+#######################
+
+
 shekhar [ ~ ]$ cat /proc/1/cgroup
 13:rdma:/gcs
 12:pids:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
@@ -29,3 +33,42 @@ shekhar [ ~ ]$ echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
 source ~/.bashrc
 shekhar [ ~ ]$ packer --version
 1.8.6
+
+
+
+
+
+
+
+Setting ENV Variables
+#########################
+
+
+shekhar [ ~ ]$ echo "export ARM_CLIENT_SECRET='1606963f-a706-4bc3-bc15-6dbdb78ce4d1'" >> ~/.bashrc
+shekhar [ ~ ]$ echo "export ARM_SUBSCRIPTION_ID='0fc88ba0-a7fc-4f7c-bd55-59425648f69b'" >> ~/.bashrc
+shekhar [ ~ ]$ source ~/.bashrc~
+bash: /home/shekhar/.bashrc~: No such file or directory
+shekhar [ ~ ]$ 
+shekhar [ ~ ]$ 
+shekhar [ ~ ]$ echo "export ARM_CLIENT_ID='eb30a82f-2d52-4de0-84c2-5ecb67632510'" >> ~/.bashrc~
+shekhar [ ~ ]$ echo "export ARM_CLIENT_SECRET='1606963f-a706-4bc3-bc15-6dbdb78ce4d1'" >> ~/.bashrc
+shekhar [ ~ ]$ echo "export ARM_SUBSCRIPTION_ID='0fc88ba0-a7fc-4f7c-bd55-59425648f69b'" >> ~/.bashrc
+shekhar [ ~ ]$ source ~/.bashrc
+shekhar [ ~ ]$ 
+shekhar [ ~ ]$ 
+shekhar [ ~ ]$ 
+shekhar [ ~ ]$ 
+shekhar [ ~ ]$ echo $ARM_CLIENT_ID
+
+shekhar [ ~ ]$ echo $ARM_CLIENT_SECRET
+1606963f-a706-4bc3-bc15-6dbdb78ce4d1
+shekhar [ ~ ]$ echo $ARM_SUBSCRIPTION_ID
+0fc88ba0-a7fc-4f7c-bd55-59425648f69b
+shekhar [ ~ ]$ echo $ARM_CLIENT_ID
+
+shekhar [ ~ ]$ echo "export ARM_CLIENT_ID='eb30a82f-2d52-4de0-84c2-5ecb67632510'" >> ~/.bashrc
+shekhar [ ~ ]$ echo $ARM_CLIENT_ID
+
+shekhar [ ~ ]$ source ~/.bashrc
+shekhar [ ~ ]$ echo $ARM_CLIENT_ID
+eb30a82f-2d52-4de0-84c2-5ecb67632510
