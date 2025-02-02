@@ -38,7 +38,8 @@ Once the template is ready, run Packer to build the image. Validate the image to
 
 ![image](https://github.com/user-attachments/assets/fad7431b-3c5c-46e2-8e9c-e6bcaec5ca47)
 
-![image](https://github.com/user-attachments/assets/d8eab79d-4840-4942-b8fb-97f6d54473f4)
+![image](https://github.com/user-attachments/assets/5042b24d-70c3-42f5-90d9-59cdad00eaae)
+
 
 - check with **ls command** that it has been uploaded
 - run: **packer build demo.json**
