@@ -27,6 +27,14 @@ To complete this project, you will need:
 
 ## Instructions
 
+### App Registration (Optional)
+
+You can use your personal Azure account as well to complete this exercise. Everything would remain the same, only difference would be in getting the values of clientID, clientSecret and SubscriptionID. For that, you need to do an app registration in Azure Active Directory (Microsoft Entra ID). After that, you need to create a client Secret in that application, and you are good to go to use those values.
+
+![image](https://github.com/user-attachments/assets/c4a0119f-fd22-4dd0-a1c0-efd32c41316b)
+
+
+
 ### Create Server Image: Packer Template
 
 First, use Packer to create a server image, ensuring the provided application is included in the template. 
