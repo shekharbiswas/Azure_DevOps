@@ -41,9 +41,9 @@ Before running the Packer build or any Azure-related tasks, make sure to set the
 In your terminal, run:
 
 ```bash
-export ARM_CLIENT_ID='eb30a82f-2d52-4de0-84c2-5ecb67632510'
-export ARM_CLIENT_SECRET='1606963f-a706-4bc3-bc15-6dbdb78ce4d1'
-export ARM_SUBSCRIPTION_ID='0fc88ba0-a7fc-4f7c-bd55-59425648f69b'
+export ARM_CLIENT_ID='XXXXXX-2d52-4de0-84c2-5ecb67632510'
+export ARM_CLIENT_SECRET='XXXXXXX-XXXX-4bc3-bc15-6dbdb78XXXXX'
+export ARM_SUBSCRIPTION_ID='XXXXXXX-XXXX-4f7c-XXX-XXXXXXXXX'
 ```
 
 ### Create Server Image: Packer Template
