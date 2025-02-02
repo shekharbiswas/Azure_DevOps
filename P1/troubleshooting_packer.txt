@@ -20,13 +20,11 @@ shekhar [ ~ ]$ curl -O https://releases.hashicorp.com/packer/1.8.6/packer_1.8.6_
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 63.2M  100 63.2M    0     0   190M      0 --:--:-- --:--:-- --:--:--  190M
-shekhar [ ~ ]$ ^[[200~unzip packer_1.8.6_linux_amd64.zip
-bash: $'\E[200~unzip': command not found
-shekhar [ ~ ]$ ~
-bash: /home/shekhar: Is a directory
+
 shekhar [ ~ ]$ unzip packer_1.8.6_linux_amd64.zip
 Archive:  packer_1.8.6_linux_amd64.zip
-  inflating: packer                  
+  inflating: packer          
+
 shekhar [ ~ ]$ mkdir -p ~/bin
 shekhar [ ~ ]$ mv packer ~/bin/
 shekhar [ ~ ]$ echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
