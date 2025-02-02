@@ -1,0 +1,30 @@
+shekhar [ ~ ]$ cat /proc/1/cgroup
+13:rdma:/gcs
+12:pids:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+11:hugetlb:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+10:net_prio:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+9:perf_event:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+8:net_cls:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+7:freezer:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+6:devices:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+5:memory:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+4:blkio:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+3:cpuacct:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+2:cpu:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+1:cpuset:/containers/490a2aaf4ef80b03c18466e00dcd2c233aff6bf5c1fd663f10d8059f1a54803f
+shekhar [ ~ ]$ curl -O https://releases.hashicorp.com/packer/1.8.6/packer_1.8.6_linux_amd64.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 63.2M  100 63.2M    0     0   190M      0 --:--:-- --:--:-- --:--:--  190M
+shekhar [ ~ ]$ ^[[200~unzip packer_1.8.6_linux_amd64.zip
+bash: $'\E[200~unzip': command not found
+shekhar [ ~ ]$ ~
+bash: /home/shekhar: Is a directory
+shekhar [ ~ ]$ unzip packer_1.8.6_linux_amd64.zip
+Archive:  packer_1.8.6_linux_amd64.zip
+  inflating: packer                  
+shekhar [ ~ ]$ mkdir -p ~/bin
+shekhar [ ~ ]$ mv packer ~/bin/
+shekhar [ ~ ]$ echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
+source ~/.bashrc
+shekhar [ ~ ]$ packer --version
