@@ -36,3 +36,5 @@ Be sure to set up any required configuration files, environment variables, and d
 
 Once the template is ready, run Packer to build the image. Validate the image to ensure everything is correctly configured. After that, use the newly created image to deploy servers with the application pre-installed, ensuring consistency across environments.
 
+![image](https://github.com/user-attachments/assets/fad7431b-3c5c-46e2-8e9c-e6bcaec5ca47)
+
