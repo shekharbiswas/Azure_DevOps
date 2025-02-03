@@ -91,12 +91,24 @@ The terraform file creates these resources listed below:
 
 #### Terraform Deployment Guide
 
-To deploy and manage resources using Terraform, follow these steps.
+To deploy and manage resources using Terraform, follow these steps:
 
-First, initialize your Terraform environment by running:
+First, initialize your Terraform environment by running `terraform init`. This prepares your working directory for Terraform operations.
 
-```sh
-terraform init
+Next, you may need to modify the `vars.tf` file to set your preferences. This file contains variables such as the resource group name, a prefix for most resources, the number of VMs (default is 3), and the location (default is Canada East). If you are using a different resource group for your Packer image, you’ll need to update the `packer_resource_group` variable to match the correct name.
+
+Once the variables are updated, review the `main.tf` file to confirm that it will create the correct resources for your needs.
+
+Before applying any changes, run `terraform plan -out solution.plan`. This will show you a preview of the changes Terraform will make. Review this carefully to ensure it aligns with your expectations.
+
+If the plan looks good, proceed by running `terraform apply solution.plan`. This will apply the changes and provision the resources as per your plan.
+
+Finally, if you no longer need the resources, you can clean up by running `terraform destroy`. This command will remove all the resources that were created by the script.
+
+**Important Notes:**
+- Ensure that your Terraform environment is set up correctly before you start.
+- Always review the output of `terraform plan` to verify the changes.
+- Use `terraform destroy` to remove resources when they are no longer needed to avoid unnecessary costs.
 
 
 
