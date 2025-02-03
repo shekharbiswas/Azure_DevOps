@@ -1,1 +1,1 @@
-# Azure App Svr: Build a CI/CD Pipeline
+# Azure App Svc: Build a CI/CD Pipeline
