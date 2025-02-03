@@ -74,10 +74,7 @@ Once the template is ready, run Packer to build the image. Validate the image to
 
 ### Terraform 
 
-
-The terraform file creates these resources listed below
-
-### Resources
+The terraform file creates these resources listed below:
 
 - **Resource Group** - A container to manage all related Azure resources.  
 - **Virtual Network** - Defines the private network space for resources.  
@@ -90,6 +87,16 @@ The terraform file creates these resources listed below
 - **Linux Virtual Machines (3 default)** - Compute instances running Linux.  
 - **Managed Disks (1 per VM)** - Persistent storage for each VM.  
 
+
+
+#### Terraform Deployment Guide
+
+To deploy and manage resources using Terraform, follow these steps.
+
+First, initialize your Terraform environment by running:
+
+```sh
+terraform init
 
 
 
