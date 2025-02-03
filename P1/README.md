@@ -66,6 +66,32 @@ Once the template is ready, run Packer to build the image. Validate the image to
 - run: **packer build demo.json**
 
 
+
 **After successful build, check the image:**
 ![image](https://github.com/user-attachments/assets/ae19cbf6-1318-4387-8247-a0b0825b50bb)
+
+
+
+### Terraform 
+
+
+The terraform file creates these resources listed below
+
+### Resources
+
+- **Resource Group** - A container to manage all related Azure resources.  
+- **Virtual Network** - Defines the private network space for resources.  
+  - **Subnet** - Segments the Virtual Network for better organization.  
+  - **Network Security Group (NSG)** - Restricts inbound/outbound traffic for security.  
+- **Network Interfaces (NICs)** - Connects VMs to the network.  
+- **Public IP** - Provides external access to the load balancer or VMs.  
+- **Load Balancer** - Distributes traffic across multiple VMs for high availability.  
+- **Availability Set** - Ensures VM redundancy by spreading them across fault & update domains.  
+- **Linux Virtual Machines (3 default)** - Compute instances running Linux.  
+- **Managed Disks (1 per VM)** - Persistent storage for each VM.  
+
+
+
+
+
 
