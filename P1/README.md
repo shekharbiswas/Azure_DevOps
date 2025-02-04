@@ -67,7 +67,7 @@ Once the template is ready, run Packer to build the image. Validate the image to
 
   
 if the image already exists, overwrite the existing image
-- **packer build force server.json**
+- **packer build -force server.json**
 
 
 
