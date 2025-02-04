@@ -121,10 +121,13 @@ To deploy and manage resources using Terraform, follow these steps:
 ```bash
 C:\Users\shekh\Downloads\azure-devops\p1\tf>terraform plan -out solution.plan
 data.azurerm_image.web: Reading...
-data.azurerm_image.web: Read complete after 2s [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe/providers/Microsoft.Compute/images/myPackerImage]
+azurerm_resource_group.main: Refreshing state... [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe]
+data.azurerm_image.web: Read complete after 4s [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe/providers/Microsoft.Compute/images/myPackerImage]
 
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
+symbols:
   + create
+  ~ update in-place
 
 Terraform will perform the following actions:
 
@@ -644,14 +647,15 @@ Terraform will perform the following actions:
         }
     }
 
-  # azurerm_resource_group.main will be created
-  + resource "azurerm_resource_group" "main" {
-      + id       = (known after apply)
-      + location = "westeurope"
-      + name     = "sb-west-europe"
-      + tags     = {
-          + "Environment " = "Development"
+  # azurerm_resource_group.main will be updated in-place
+  ~ resource "azurerm_resource_group" "main" {
+        id         = "/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe"
+        name       = "sb-west-europe"
+      ~ tags       = {
+          - "Development"  = null
+          ~ "Environment " = null -> "Development"
         }
+        # (2 unchanged attributes hidden)
     }
 
   # azurerm_subnet.main will be created
@@ -726,18 +730,17 @@ Terraform will perform the following actions:
         }
     }
 
-Plan: 26 to add, 0 to change, 0 to destroy.
+Plan: 25 to add, 1 to change, 0 to destroy.
 
 Changes to Outputs:
   + lb_url = (known after apply)
 
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Saved the plan to: solution.plan
 
 To perform exactly these actions, run the following command to apply:
     terraform apply "solution.plan"
-
 ```
 
 ### Troubleshooting
