@@ -739,3 +739,16 @@ To perform exactly these actions, run the following command to apply:
     terraform apply "solution.plan"
 
 ```
+
+### Troubleshooting
+
+If you get this error, You need to run the terraform import command to import the existing resource group into your Terraform state. 
+
+Run this command:
+
+```
+terraform import azurerm_resource_group.main /subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe
+```
+
+<img width="946" alt="image" src="https://github.com/user-attachments/assets/04c1cbc7-da8d-43d6-ab57-2080a5a6d246" />
+
