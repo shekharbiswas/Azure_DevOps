@@ -124,8 +124,7 @@ data.azurerm_image.web: Reading...
 azurerm_resource_group.main: Refreshing state... [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe]
 data.azurerm_image.web: Read complete after 0s [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe/providers/Microsoft.Compute/images/myPackerImage]
 
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
-symbols:
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
@@ -554,13 +553,67 @@ Terraform will perform the following actions:
               + destination_address_prefix                 = "*"
               + destination_address_prefixes               = []
               + destination_application_security_group_ids = []
-              + destination_port_range                     = "8080"
+              + destination_port_range                     = "80"
               + destination_port_ranges                    = []
               + direction                                  = "Inbound"
-              + name                                       = "HTTP"
-              + priority                                   = 100
+              + name                                       = "Allow-HTTP-From-LB"
+              + priority                                   = 2000
               + protocol                                   = "Tcp"
-              + source_address_prefix                      = "*"
+              + source_address_prefix                      = "AzureLoadBalancer"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "VirtualNetwork"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "Allow-VNet-Inbound"
+              + priority                                   = 1000
+              + protocol                                   = "*"
+              + source_address_prefix                      = "VirtualNetwork"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "VirtualNetwork"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Outbound"
+              + name                                       = "Allow-VNet-Outbound"
+              + priority                                   = 1000
+              + protocol                                   = "*"
+              + source_address_prefix                      = "VirtualNetwork"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + access                                     = "Deny"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "*"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "Deny-All-Inbound"
+              + priority                                   = 4096
+              + protocol                                   = "*"
+              + source_address_prefix                      = "0.0.0.0/0"
               + source_address_prefixes                    = []
               + source_application_security_group_ids      = []
               + source_port_range                          = "*"
@@ -665,4 +718,7 @@ Terraform will perform the following actions:
     }
 
 Plan: 25 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + lb_url = (known after apply)
 ```
