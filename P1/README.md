@@ -63,7 +63,7 @@ Once the template is ready, run Packer to build the image. Validate the image to
 
 
 - check with **ls command** that it has been uploaded
-- run: **packer build demo.json**
+- run: **packer build server.json**
 
 
 
