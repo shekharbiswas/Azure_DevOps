@@ -1,40 +1,43 @@
 {
-  "builders": [{
-    "type": "azure-arm",
-
-    "client_id": "b8945795-10b3-4140-b056-6b7edec4d4a5",
-    "client_secret": "Y118Q~qmzCUhoDZQJVGzEGvUvPfyK5UZdEqZPczl",
-    "tenant_id": "c2994726-2154-414a-97ac-64b2e7c03376",
-    "subscription_id": "0fc88ba0-a7fc-4f7c-bd55-59425648f69b",
-
-    "managed_image_resource_group_name": "sb-west-europe",
-    "managed_image_name": "myPackerImage",
-
-    "os_type": "Linux",
-    "image_publisher": "canonical",
-    "image_offer": "0001-com-ubuntu-server-jammy",
-    "image_sku": "22_04-lts",
-
-    "azure_tags": {
+  "builders": [
+    {
+      "type": "azure-arm",
+      "client_id": "b8945795-10b3-4140-b056-6b7edec4d4a5",
+      "client_secret": "Y118Q~qmzCUhoDZQJVGzEGvUvPfyK5UZdEqZPczl",
+      "tenant_id": "c2994726-2154-414a-97ac-64b2e7c03376",
+      "subscription_id": "0fc88ba0-a7fc-4f7c-bd55-59425648f69b",
+      "managed_image_resource_group_name": "sb-west-europe",
+      "managed_image_name": "myPackerImage",
+      "os_type": "Linux",
+      "image_publisher": "canonical",
+      "image_offer": "0001-com-ubuntu-server-jammy",
+      "image_sku": "22_04-lts",
+      "azure_tags": {
         "dept": "Engineering",
         "task": "Image deployment",
-		"Environment ": "Dev"
-    },
+        "Environment\u0020": "Dev"
+      },
+      "build_resource_group_name": "sb-west-europe",
+      "vm_size": "Standard_B1ls"
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "apt-get update",
+        "apt-get upgrade -y",
+        "apt-get -y install nginx",
+        
+        "echo '<!DOCTYPE html><html><head><title>Fake Hello World</title></head><body><h1>Welcome to the Hello World Application!</h1></body></html>' | sudo tee /var/www/html/index.html",
 
-    "build_resource_group_name": "sb-west-europe",
-    "vm_size": "Standard_DS2_v2"
-  }],
-  
-  "provisioners": [{
-    "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
-    "inline": [
-      "apt-get update",
-      "apt-get upgrade -y",
-      "apt-get -y install nginx",
+        "sudo systemctl enable nginx",
+        "sudo systemctl restart nginx",
 
-      "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
-    ],
-    "inline_shebang": "/bin/sh -x",
-    "type": "shell"
-  }]
+        "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+      ],
+      "inline_shebang": "/bin/sh -x",
+      "type": "shell"
+    }
+  ]
 }
