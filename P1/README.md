@@ -64,6 +64,8 @@ Once the template is ready, run Packer to build the image. Validate the image to
 
 - check with **ls command** that it has been uploaded
 - run: **packer build server.json**
+if the image already exists, overwrite the existing image
+- **packer build force server.json**
 
 
 
