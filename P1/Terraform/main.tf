@@ -31,17 +31,58 @@ resource "azurerm_network_security_group" "main" {
     "Environment\u0020" = "Development"
   }
 
+# 1. Deny all inbound traffic from the Internet (Lowest Priority)
   security_rule {
-    name                       = "HTTP"
-    priority                   = 100
+    name                       = "Deny-All-Inbound"
+    priority                   = 4096  # Lowest priority (ensures it's last)
+    direction                  = "Inbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "0.0.0.0/0"
+    destination_address_prefix = "*"
+  }
+
+  # 2. Allow inbound traffic within the same virtual network
+  security_rule {
+    name                       = "Allow-VNet-Inbound"
+    priority                   = 1000
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "VirtualNetwork"
+    destination_address_prefix = "VirtualNetwork"
+  }
+
+  # 3. Allow outbound traffic within the same virtual network
+  security_rule {
+    name                       = "Allow-VNet-Outbound"
+    priority                   = 1000
+    direction                  = "Outbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "VirtualNetwork"
+    destination_address_prefix = "VirtualNetwork"
+  }
+
+  # 4. Allow inbound HTTP traffic from the Load Balancer to VMs
+  security_rule {
+    name                       = "Allow-HTTP-From-LB"
+    priority                   = 2000
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "8080"
-    source_address_prefix      = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "AzureLoadBalancer"
     destination_address_prefix = "*"
   }
+
 }
 
 resource "azurerm_virtual_network" "main" {
