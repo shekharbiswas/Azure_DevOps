@@ -121,7 +121,7 @@ To deploy and manage resources using Terraform, follow these steps:
 ```bash
 C:\Users\shekh\Downloads\azure-devops\p1\tf>terraform plan -out solution.plan
 data.azurerm_image.web: Reading...
-data.azurerm_image.web: Read complete after 0s [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe/providers/Microsoft.Compute/images/myPackerImage]
+data.azurerm_image.web: Read complete after 2s [id=/subscriptions/0fc88ba0-a7fc-4f7c-bd55-59425648f69b/resourceGroups/sb-west-europe/providers/Microsoft.Compute/images/myPackerImage]
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
@@ -730,5 +730,12 @@ Plan: 26 to add, 0 to change, 0 to destroy.
 
 Changes to Outputs:
   + lb_url = (known after apply)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: solution.plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "solution.plan"
 
 ```
