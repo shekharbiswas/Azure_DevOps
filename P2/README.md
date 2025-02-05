@@ -18,16 +18,16 @@ This project demonstrates how to build and deploy a Python-based Machine Learnin
 
 ### Clone the repository:
 
-git clone https://github.com/your-username/ci-cd-ml-deployment.git
-cd ci-cd-ml-deployment
+- git clone https://github.com/your-username/ci-cd-ml-deployment.git
+- cd ci-cd-ml-deployment
 
 
 ### Install dependencies:
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### Run the application locally:
-python app.py
+- python app.py
 
 ### Trigger CI/CD workflows via GitHub Actions and Azure Pipelines.
 
@@ -36,5 +36,5 @@ python app.py
 
 
 
-A fully operational Machine Learning Microservice API deployed on Azure.
-A demo video showcasing the pipeline, API functionality, and deployment process.
+- A fully operational Machine Learning Microservice API deployed on Azure.
+- A demo video showcasing the pipeline, API functionality, and deployment process.
