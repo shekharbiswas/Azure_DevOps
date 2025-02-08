@@ -1,9 +1,8 @@
 # **Azure DevOps Agents and Their Role in Pipelines**
 
-## **Introduction**
 Azure DevOps provides a powerful **CI/CD (Continuous Integration and Continuous Deployment)** pipeline system that automates software development and deployment. A key component of this system is the **Agent**, which executes the jobs defined in a pipeline.
 
----
+
 
 ## **What is an Azure DevOps Agent?**
 An **Azure DevOps Agent** is a computing resource that runs tasks assigned by an Azure Pipeline. It is responsible for performing operations like:
@@ -27,7 +26,7 @@ Azure DevOps provides two types of agents:
 - **Supports custom dependencies** – You can install specific software, tools, or SDKs.
 - **Ideal for** private networks, long-running processes, and cost optimization.
 
----
+
 
 ## **Agent Pools**
 An **Agent Pool** is a collection of agents that can be shared across multiple projects and pipelines.
@@ -37,7 +36,6 @@ An **Agent Pool** is a collection of agents that can be shared across multiple p
 
 > **Tip:** Use self-hosted agents if you need specific configurations or want to reduce build costs.
 
----
 
 ## **How Agents Work in Azure Pipelines**
 1. **Pipeline Execution:** When a pipeline runs, it assigns jobs to available agents.
@@ -45,7 +43,7 @@ An **Agent Pool** is a collection of agents that can be shared across multiple p
 3. **Task Execution:** The agent runs tasks such as building code, running tests, and deploying applications.
 4. **Reporting:** The agent sends job results back to Azure DevOps.
 
----
+
 
 ## **Example: Using an Agent in a YAML Pipeline**
 Below is an example of a YAML pipeline that specifies an **Ubuntu-based Microsoft-hosted agent**:
