@@ -34,7 +34,7 @@ This project demonstrates how to build and deploy a Python-based Machine Learnin
 
 
 
-
+## Deliverables
 
 - A fully operational Machine Learning Microservice API deployed on Azure.
-- A demo video showcasing the pipeline, API functionality, and deployment process.
+- A demo showcasing the pipeline, API functionality, and deployment process.
