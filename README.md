@@ -9,3 +9,5 @@ This project sets up a GitHub repository with CI/CD automation using GitHub Acti
 [link](https://github.com/shekharbiswas/Build_CI_CD_pipeline)
 
 ## P3. Ensuring Quality Releases
+
+[link](https://github.com/shekharbiswas/Ensure_Quality_Releases)
